@@ -1,6 +1,6 @@
 <?php
 
-$text = ' Bu cumle 6 sozden cox soze sahibdir        ';
+$text = 'Bu cumle 6 sozden cox soze sahibdir';
 $i    = 0;
 
 if ( $text[ 0 ] === ' ' )
