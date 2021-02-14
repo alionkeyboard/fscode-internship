@@ -17,7 +17,7 @@ function ilk_herfleri_boyut ( $metn )
 	 * default deyerinin true olmasina sebeb metnin ilk herfinin boyuk olmasidi
 	 *
 	 * bir coxunuz $metn[0] ile ilk herfi boyutmushduz, amma nezere almaq lazimdir ki, o halda "  ilk herf"
-	 * tiple metnde duzgun ishlemeyecekdi
+	 * tipli metnde duzgun ishlemeyecekdi
 	 */
 	$evvelinde_noqte_olub = TRUE;
 
