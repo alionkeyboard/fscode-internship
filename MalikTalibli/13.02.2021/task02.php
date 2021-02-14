@@ -1,38 +1,42 @@
-<?php 
-	
-	$text = 'suretli kod yazmaq her zaman daha yaxshi kod yazmaq demek deyil.   seliqeye ve hellin optimalligina da fikir verilmelidir.'; 
+<?php
 
-	echo strtoupper($text[0]);//bir herfi cevirmekcun istifade olunub
+$text = 'suretli kod yazmaq her zaman daha yaxshi kod yazmaq demek deyil.   seliqeye ve hellin optimalligina da fikir verilmelidir.';
 
-	for ($i=1; isset($text[$i]) ; $i++) { 
-     	
-     	if ($text[$i]==='.') {
+echo strtoupper( $text[ 0 ] );//bir herfi cevirmekcun istifade olunub
 
-     		echo $text[$i];
+for ( $i = 1; isset( $text[ $i ] ); $i++ )
+{
 
-     		$i+=1;
+	if ( $text[ $i ] === '.' )
+	{
 
-     		if (isset($text[$i]) and $text[$i]==' ') {
-     			echo $text[$i];
-     			$i+=1;
-     			for ($i; $text[$i]==' ' ; $i++) { 
-     				$i+=1;
-     			}
-     		}
+		echo $text[ $i ];
 
-     		if (isset($text[$i])) {
-     			echo strtoupper($text[$i]);//bir herfi cevirmekcun istifade olunub
-     		}
+		$i += 1;
 
-     		$i+=1;
-     	}
+		if ( isset( $text[ $i ] ) and $text[ $i ] == ' ' )
+		{
+			echo $text[ $i ];
+			$i += 1;
+			for ( $i; $text[ $i ] == ' '; $i++ )
+			{
+				$i += 1;
+			}
+		}
 
-     	if (isset($text[$i])) {
-     		echo $text[$i];
-     	}
+		if ( isset( $text[ $i ] ) )
+		{
+			echo strtoupper( $text[ $i ] );//bir herfi cevirmekcun istifade olunub
+		}
 
+		$i += 1;
 	}
 
-	
+	if ( isset( $text[ $i ] ) )
+	{
+		echo $text[ $i ];
+	}
 
- ?>
+}
+
+?>

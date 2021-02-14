@@ -1,8 +1,9 @@
 <?php
+
 $cumle = 'Bu gunluk son tapsiriq.';
-$x = 4;
-$y = 6;
-$soz="";
+$x     = 4;
+$y     = 6;
+$soz   = "";
 /*
     $n = 0; //strlen əvəzi
     while (isset($cumle[$n])){
@@ -12,7 +13,8 @@ $soz="";
         echo $cumle[$i];
     }
 */
-for($i=$x-1; $i<$x+$y-1; $i++){ //3dən 9a qədər
-    $soz=$cumle[$i];
-    echo $soz;   
+for ( $i = $x - 1; $i < $x + $y - 1; $i++ )
+{ //3dən 9a qədər
+	$soz = $cumle[ $i ];
+	echo $soz;
 }

@@ -1,38 +1,39 @@
 <?php
-function getWordFromString($x, $y, $str)
+
+function getWordFromString ( $x, $y, $str )
 {
-	$i = 0;
-	$j = 0;
+	$i           = 0;
+	$j           = 0;
 	$lengthOfStr = 0;
-	$result = [];
+	$result      = [];
 
 	//length of the string
-	while(isset($str[$lengthOfStr]))
+	while ( isset( $str[ $lengthOfStr ] ) )
 	{
 		$lengthOfStr++;
 	}
 
-	for($i=0;$i<$lengthOfStr;$i++)
+	for ( $i = 0; $i < $lengthOfStr; $i++ )
 	{
-		if($i == $x-1)
+		if ( $i == $x - 1 )
 		{
-			for($j=0;$j<=$y-1;$j++)
+			for ( $j = 0; $j <= $y - 1; $j++ )
 			{
-				$result[$j] = $str[$i+$j];
+				$result[ $j ] = $str[ $i + $j ];
 			}
 		}
 	}
 
-	for($i = 0; $i<=$y-1; $i++)
+	for ( $i = 0; $i <= $y - 1; $i++ )
 	{
-		echo $result[$i];
+		echo $result[ $i ];
 	}
 }
 
-$x = 4;
-$y = 6;
+$x    = 4;
+$y    = 6;
 $text = "Bu gunluk son tapsiriq.";
 
-print(getWordFromString($x,$y,$text));
+print( getWordFromString( $x, $y, $text ) );
 
 ?>

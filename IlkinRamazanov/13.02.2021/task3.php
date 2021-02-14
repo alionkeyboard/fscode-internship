@@ -1,18 +1,20 @@
 <?php
-function getWord($text, $start, $end)
+
+function getWord ( $text, $start, $end )
 {
-    $word = "";
+	$word = "";
 
-    for ($i = 0; $i < $end; $i++, $start++) {
-        $letter = $text[$start - 1];
-        $word = $word . $letter;
-    }
+	for ( $i = 0; $i < $end; $i++, $start++ )
+	{
+		$letter = $text[ $start - 1 ];
+		$word   = $word . $letter;
+	}
 
-    return $word;
+	return $word;
 }
 
 $text = "Bu gunluk son tapsiriq.";
-$x = 4;
-$y = 6;
-print(getWord($text, $x, $y));
+$x    = 4;
+$y    = 6;
+print( getWord( $text, $x, $y ) );
 ?>

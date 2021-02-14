@@ -7,7 +7,7 @@ $new_text = '';
 
 for ( $i = $x; $i < $x + $y; $i++ )
 {
-$new_text .= $text[ $i ];
+	$new_text .= $text[ $i ];
 }
 
 echo $new_text;

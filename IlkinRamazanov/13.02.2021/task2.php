@@ -1,47 +1,56 @@
 <?php
-function findStringLength($text)
+
+function findStringLength ( $text )
 {
-    $length = 0;
-    while (!empty($text[$length])) $length++;
-    return $length;
+	$length = 0;
+	while ( ! empty( $text[ $length ] ) )
+	{
+		$length++;
+	}
+
+	return $length;
 }
 
-function splitTextIntoSentences($text)
+function splitTextIntoSentences ( $text )
 {
-    $sentences = [];
-    $sentence = '';
+	$sentences = [];
+	$sentence  = '';
 
-    for ($i = 0; $i < findStringLength($text) - 1; $i++) {
-        if ($text[$i] === '.') {
-            $sentences[] = $sentence;
-            $sentence = '';
-        } else {
-            $sentence .= $text[$i];
-        }
-    }
+	for ( $i = 0; $i < findStringLength( $text ) - 1; $i++ )
+	{
+		if ( $text[ $i ] === '.' )
+		{
+			$sentences[] = $sentence;
+			$sentence    = '';
+		}
+		else
+		{
+			$sentence .= $text[ $i ];
+		}
+	}
 
-    $sentences[] = $sentence;
+	$sentences[] = $sentence;
 
-    return $sentences;
+	return $sentences;
 }
 
-
-function titleText($text)
+function titleText ( $text )
 {
-    $sentences = splitTextIntoSentences($text);
-    $titledText = "";
-    $counter = 0;
+	$sentences  = splitTextIntoSentences( $text );
+	$titledText = "";
+	$counter    = 0;
 
-    foreach ($sentences as $sentence) {
-        $titledSent = ucfirst(trim($sentence));
-        $joinedSentence = $counter == 0 ? $titledSent : ". {$titledSent}";
-        $titledText =  $titledText . $joinedSentence;
-        $counter++;
-    }
+	foreach ( $sentences as $sentence )
+	{
+		$titledSent     = ucfirst( trim( $sentence ) );
+		$joinedSentence = $counter == 0 ? $titledSent : ". {$titledSent}";
+		$titledText     = $titledText . $joinedSentence;
+		$counter++;
+	}
 
-    return $titledText;
+	return $titledText;
 }
 
 $text = "I am a string with several periods. period #1. period #2.";
-print(titleText($text));
+print( titleText( $text ) );
 ?>
