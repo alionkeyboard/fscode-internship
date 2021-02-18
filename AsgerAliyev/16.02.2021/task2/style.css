@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+    background-color: darkgreen;
+}
+
+table {
+    margin: auto;
+
+
+}
+
+tr {
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    font-size: 35px;
+    text-align: center;
+}
+
+
+.black {
+    width:  80px;
+    background-color: brown;
+}
+
+.white {
+    width:  80px;
+    background-color: navajowhite;
+}
+
+.black:hover {
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+.white:hover {
+    background-color: sandybrown;
+    cursor: pointer;
+}
