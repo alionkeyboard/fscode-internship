@@ -19,7 +19,7 @@
         <div class="container">
            <div class="row">
             <div class="col-md-12">
-                 <input type="number"  name="number" value="Bir eded girin" required>
+                 <input type="number"  name="number" placeholder="Bir ədəd yazın" required>
             </div>
             <div class="col-md-12">
                  <textarea name="text" placeholder="TEXT" rows="7" cols="85"   required>
