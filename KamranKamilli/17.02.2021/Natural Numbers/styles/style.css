@@ -1,0 +1,47 @@
+#table {
+  width: 100%;
+  text-align: center;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  font-size: 20px;
+}
+th,
+td {
+  padding: 10px;
+}
+#form {
+  font-size: 20px;
+}
+form {
+  padding: 20px;
+  margin: 0 auto;
+  width: 300px;
+}
+.help-block {
+  color: red;
+}
+input[type=text] {
+    padding: 5px;
+    margin:10px 0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+    outline: none;
+}
+#button
+{
+    appearance:none;
+    -webkit-appearance:none;
+    padding:10px;
+    border:none;
+    background-color: black;
+    color:#fff;
+    font-weight:600;
+    border-radius:5px;
+}
+#button:hover
+{
+    color: red;
+}
