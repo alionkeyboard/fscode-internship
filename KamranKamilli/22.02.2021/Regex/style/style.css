@@ -1,0 +1,59 @@
+.multipleSelection {
+  width: 200px;
+  background-color: white;
+  display: block;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  
+}
+#checkBoxes {
+  display: none;
+  border: 1px black solid;
+}
+
+#checkBoxes label {
+  display: block;
+}
+
+#checkBoxes label:hover {
+  background-color: blue;
+}
+.textArea {
+  display: block;
+}
+.help-block
+{
+  color: red;
+}
+#checkbutton {
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-weight: bold;
+}
+#checkbutton:hover {
+  background: red;
+}
+.input {
+  padding: 10px;
+  border: 1px solid;
+  width: 100%;
+}
+#title
+{
+  text-align: center;
+}
