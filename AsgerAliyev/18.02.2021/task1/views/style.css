@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+    background-color: ghostwhite;
+}
+
+form {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 10px auto;
+    width:250px;
+
+}
+
+.instaimg {
+    max-height: 160px;
+    max-width: 160px;
+    border-radius: 50%;
+}
