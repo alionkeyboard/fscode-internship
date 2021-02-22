@@ -1,33 +1,37 @@
-<?php 
+<?php
 
-	$number = $_POST['number'];
-	$tam = '';
-	$kesr = '';
+$number = $_POST[ 'number' ];
+$tam    = '';
+$kesr   = '';
 
-	for ($i=0; isset($number[$i]) ; $i++) { 
+for ( $i = 0; isset( $number[ $i ] ); $i++ )
+{
 
-		if ($number[$i] != '.') {
+	if ( $number[ $i ] != '.' )
+	{
 
 		//noqte yoxdusa $number[$i] $tam-in icine atiriq
-			$tam .= $number[$i];
+		$tam .= $number[ $i ];
 
-		}else{
+	}
+	else
+	{
 
-			for ($i++; isset($number[$i]) ; $i++) { 
+		for ( $i++; isset( $number[ $i ] ); $i++ )
+		{
 
-				//$number[$i] noqtedise $i bir artirilir(noqteni goturmemekcun) ve $kesr icine atilir
-				$kesr .= $number[$i];
+			//$number[$i] noqtedise $i bir artirilir(noqteni goturmemekcun) ve $kesr icine atilir
+			$kesr .= $number[ $i ];
 
-			}
 		}
 	}
-
+}
 
 //kesr ededin kicik ve boyuk taplarini tapiriq
 $boyuk = $number - $tam;
 $kicik = $tam + 1 - $number;
-	
-include('response.php');
- ?>
+
+include( 'response.php' );
+?>
 
  

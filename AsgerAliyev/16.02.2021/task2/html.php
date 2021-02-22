@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<table>
-			<?php require_once 'core.php'?>
+			<?php require_once 'core.php' ?>
 		</table>
 	</body>
 </html>

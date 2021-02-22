@@ -1,20 +1,18 @@
 <?php
 
 $array = [
-	  'cixarin',
-	  'keyfini',
-	  'gunun',
-	  'bu'
-	  ];  
-   
- 
-   
+	'cixarin',
+	'keyfini',
+	'gunun',
+	'bu'
+];
 
-echo '['. '<br>';
+echo '[' . '<br>';
 
-for ($i = count($array)-1; $i >= 0; $i--) {   
-	print(" ' ". $array[$i] ). " ', " . '<br>';
-	
+for ( $i = count( $array ) - 1; $i >= 0; $i-- )
+{
+	print( " ' " . $array[ $i ] ) . " ', " . '<br>';
+
 }
 
 echo ']';

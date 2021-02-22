@@ -1,53 +1,49 @@
 <?php
 
-$multidimensional_arr =
-    [
-    'eded',
-    [
-        'kitab',
+$multidimensional_arr = [
+	'eded',
+	[
+		'kitab',
 
-        'defter'
-    ],
+		'defter'
+	],
 
-    [
-        1,
+	[
+		1,
 
-        11
-    ],
+		11
+	],
 
-    'baki'
-    ];
+	'baki'
+];
 
 //Verilenleri ayri-ayri array sekilinde qeyd
 
-$array1 =
-    [
+$array1 = [
 
-    'eded',
+	'eded',
 
-    'baki'
-    ];
+	'baki'
+];
 
-$array2 =
-    [
+$array2 = [
 
-    'kitab',
+	'kitab',
 
-    'defter'
-    ];
+	'defter'
+];
 
-$array3 =
-    [
+$array3 = [
 
-        1,
+	1,
 
-        11
-    ];
+	11
+];
 
 //Daha sonra bir deyisken qeyd edirik
 
 //Ayirdiqmiz arraylari array_merge ile birlesdirib yaratdiqmiz deyiskene beraber edirik
 
-$multidimensional_arr1 = array_merge($array1,$array2,$array3);
+$multidimensional_arr1 = array_merge( $array1, $array2, $array3 );
 
-print_r($multidimensional_arr1);
+print_r( $multidimensional_arr1 );

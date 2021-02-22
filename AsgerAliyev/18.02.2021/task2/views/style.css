@@ -21,7 +21,6 @@ form {
 }
 
 html,
-
 .card {
     background-color: #ffffff;
     border-radius: 50px;
@@ -39,7 +38,6 @@ html,
 }
 
 .temp-details > p > span,
-
 .grey {
     color: #a3acc1;
     font-size: 12px

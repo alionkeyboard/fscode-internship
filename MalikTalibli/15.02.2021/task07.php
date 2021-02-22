@@ -1,40 +1,45 @@
 <?php
 
-    $text1 = 'Ali:Rzayev:2000:ADPU';
-    $text2 = 'Malik:Talibli:1993:BDU';
-    $simvol = ':';
+$text1  = 'Ali:Rzayev:2000:ADPU';
+$text2  = 'Malik:Talibli:1993:BDU';
+$simvol = ':';
 
-    function exploded($text){
-    
-        $a = '';
-        $array = [];
+function exploded ( $text )
+{
 
-        for ($j = 0; isset($text[$j]); $j++) {
+	$a     = '';
+	$array = [];
 
-         }
+	for ( $j = 0; isset( $text[ $j ] ); $j++ )
+	{
 
-        $j-=1;
+	}
 
-        if ($text[$j] != ':') {
-            $text .=':';
-        }
+	$j -= 1;
 
-         for ($i = 0; $i<=$j+1; $i++) {
+	if ( $text[ $j ] != ':' )
+	{
+		$text .= ':';
+	}
 
-             if ($text[$i]!=':') {
-                $a .= $text[$i];
-            }else{
-                $array[] = $a;
-	            $a = '';
-            }
-	    }
+	for ( $i = 0; $i <= $j + 1; $i++ )
+	{
 
+		if ( $text[ $i ] != ':' )
+		{
+			$a .= $text[ $i ];
+		}
+		else
+		{
+			$array[] = $a;
+			$a       = '';
+		}
+	}
 
-        return print_r($array);
+	return print_r( $array );
 
-    }
+}
 
-    exploded($text1);
-
+exploded( $text1 );
 
 ?>

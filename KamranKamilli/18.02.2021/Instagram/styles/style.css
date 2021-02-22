@@ -1,45 +1,55 @@
 #username {
-  padding: 10px;
-  border: 1px solid;
-  width: 500px;
+    padding: 10px;
+    border: 1px solid;
+    width: 500px;
 }
+
 #showbutton {
-  padding: 10px;
-  border: 1px solid #ddd;
-  background: #fff;
-  font-weight: bold;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-weight: bold;
 }
+
 #showbutton:hover {
-  background: red;
+    background: red;
 }
+
 #profileimg {
-  border-radius: 50%;
+    border-radius: 50%;
 }
+
 #username {
-  padding: 10px;
-  border: 1px solid;
-  width: 50%;
+    padding: 10px;
+    border: 1px solid;
+    width: 50%;
 }
+
 #header {
-  margin-top: 30px;
-  border-bottom: 3px solid;
+    margin-top: 30px;
+    border-bottom: 3px solid;
 }
+
 #section {
-  margin-top: 50px;  
+    margin-top: 50px;
 }
+
 #fullname {
-  margin-top: 30px;
+    margin-top: 30px;
 }
+
 .help-block {
-  color: red;
-  font-size: 20px;
-  margin-left: 10px;
+    color: red;
+    font-size: 20px;
+    margin-left: 10px;
 }
+
 .post {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
+
 .postcontainer {
-  margin-top: 30px;
-  margin-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }

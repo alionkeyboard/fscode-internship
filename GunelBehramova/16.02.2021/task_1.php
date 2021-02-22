@@ -1,18 +1,16 @@
 <?php
 
-
-function ilk_herfi_boyut ($soz)
+function ilk_herfi_boyut ( $soz )
 {
 
+	$low = strtolower( $soz );
 
-$low = strtolower($soz);
+	$result = ucfirst( $low );
 
-$result = ucfirst($low);
-
-return $result;
+	return $result;
 
 }
 
-echo ilk_herfi_boyut ('birlikde Oyrenirik.');
+echo ilk_herfi_boyut( 'birlikde Oyrenirik.' );
 
 ?>

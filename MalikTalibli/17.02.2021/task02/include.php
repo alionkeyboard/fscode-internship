@@ -1,7 +1,6 @@
-<?php 
+<?php
 
-	include('core.php');
-	include('input.php');
+include( 'core.php' );
+include( 'input.php' );
 
-
- ?>
+?>

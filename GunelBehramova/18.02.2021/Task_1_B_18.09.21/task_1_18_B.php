@@ -1,132 +1,141 @@
-<?php error_reporting(E_ERROR); ?>
+<?php error_reporting( E_ERROR ); ?>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Example</title>
-</head>
-<body>
+	<head>
+		<meta charset="utf-8">
+		<title>Example</title>
+	</head>
+	<body>
 
-<form method="post">
-    <strong>Instagram Url :</strong>
-    <input type="url" name="url" placeholder="example: instagram">
-    <input type="submit" name="btn_sbmt" value="Go">
-</form>
+		<form method="post">
+			<strong>Instagram Url :</strong>
+			<input type="url" name="url" placeholder="example: instagram">
+			<input type="submit" name="btn_sbmt" value="Go">
+		</form>
 
-<?php
+		<?php
 
+		if ( $_POST[ 'btn_sbmt' ] && $_POST[ 'url' ] )
+		{
 
-if ( $_POST['btn_sbmt'] && $_POST['url'] ) {
+			$url = $_POST[ 'url' ];
 
-    $url =  $_POST['url'];
+			$html = file_get_contents( $url );
 
-    $html = file_get_contents($url);
+			$dom = new DOMDocument();
 
-    $dom = new DOMDocument();
+			$dom->loadHTML( $html );
 
-    $dom->loadHTML($html);
+			$meta_tags = $dom->getElementsByTagName( 'meta' );
 
-    $meta_tags = $dom->getElementsByTagName('meta');
+			// image
 
-    // image
+			foreach ( $meta_tags as $meta )
+			{
 
-    foreach( $meta_tags as $meta ) {
+				if ( $meta->getAttribute( 'property' ) == 'og:image' )
+				{
 
-        if( $meta->getAttribute('property') == 'og:image' ) {
+					$image_url = $meta->getAttribute( 'content' );
 
-            $image_url = $meta->getAttribute('content');
+					if ( $image_url )
+					{
 
-            if( $image_url ) {
+						$replace = [
+							'/vp' => '',
+						];
 
-                $replace = array(
-                    '/vp' => '',
-                );
+						$large_url = strtr( $image_url, $replace );
 
-                $large_url = strtr($image_url, $replace);
+						echo '<br>';
 
-                echo '<br>';
+						echo '<b> Profil sekli:';
 
-                echo '<b> Profil sekli:';
-
-                echo '
-                    <a href="'. $large_url .'" target="_blank">
-                        <img src="'. $large_url .'" alt="'. $_POST['username'] .'" width="100" height="auto">
+						echo '
+                    <a href="' . $large_url . '" target="_blank">
+                        <img src="' . $large_url . '" alt="' . $_POST[ 'username' ] . '" width="100" height="auto">
                     </a>
                 ';
 
-            } else {
+					}
+					else
+					{
 
-                echo '<strong>Melumat tapilmadi!</strong>';
+						echo '<strong>Melumat tapilmadi!</strong>';
 
-            }
+					}
 
-        }
+				}
 
-    }
+			}
 
+			// followers
 
+			foreach ( $meta_tags as $meta )
+			{
 
-// followers
+				if ( $meta->getAttribute( 'property' ) == 'og:title' )
+				{
 
- foreach( $meta_tags as $meta ) {
+					$title_url = $meta->getAttribute( 'content' );
 
-        if( $meta->getAttribute('property') == 'og:title' ) {
+					if ( $title_url )
+					{
 
-            $title_url = $meta->getAttribute('content');
+						$replace = [
+							'/vp' => '',
+						];
 
-            if( $title_url ) {
+						$large_url = strtr( $title_url, $replace );
 
-                $replace = array(
-                    '/vp' => '',
-                );
+						echo '<br>' . '<br>' . '<b> Istifadeci adi: ' . $large_url;
 
-                $large_url = strtr($title_url, $replace);
+					}
+					else
+					{
 
-                echo '<br>'.'<br>'.'<b> Istifadeci adi: ' .$large_url;
+						echo '<strong>Melumat tapilmadi!</strong>';
 
-            } else {
+					}
 
-                echo '<strong>Melumat tapilmadi!</strong>';
+				}
 
-            }
+			}
 
+			foreach ( $meta_tags as $meta )
+			{
 
-        }
+				if ( $meta->getAttribute( 'property' ) == 'og:description' )
+				{
 
-    }
+					$followers_url = $meta->getAttribute( 'content' );
 
- foreach( $meta_tags as $meta ) {
+					if ( $followers_url )
+					{
 
-        if( $meta->getAttribute('property') == 'og:description' ) {
+						$replace = [
+							'/vp' => '',
+						];
 
-            $followers_url = $meta->getAttribute('content');
+						$large_url = strtr( $followers_url, $replace );
 
-            if( $followers_url ) {
+						echo '<br>' . '<br>' . '<b> Izleyici ve izlediklerinin sayi: ' . $large_url;
 
-                $replace = array(
-                    '/vp' => '',
-                );
+					}
+					else
+					{
 
-                $large_url = strtr($followers_url, $replace);
+						echo '<strong>Melumat tapilmadi!</strong>';
 
-                echo '<br>'.'<br>'.'<b> Izleyici ve izlediklerinin sayi: ' .$large_url;
+					}
 
-             
-            } else {
+				}
 
-                echo '<strong>Melumat tapilmadi!</strong>';
+			}
 
-            }
+		}
 
+		?>
 
-        }
-
-    }
-
-}
-
-
-?>
-
-</body>
+	</body>
 </html>

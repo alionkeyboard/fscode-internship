@@ -1,39 +1,46 @@
 #header {
-  text-align: center;
+    text-align: center;
 }
+
 #section {
-  text-align: center;
+    text-align: center;
 }
+
 #heading {
-  font-size: 50px;
+    font-size: 50px;
 }
+
 #rgb {
-  font-size: 20px;
+    font-size: 20px;
 }
+
 .button {
-  color: white;
-  padding: 20px;
-  text-align: center;
-  display: inline-block;
-  margin: 4px 2px;
-  border-radius: 100%;
-  outline: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 100%;
+    outline: none;
 }
 
 #button1 {
-  background-color: rgb(var(--red1), var(--green1), var(--blue1));
+    background-color: rgb(var(--red1), var(--green1), var(--blue1));
 }
+
 #button2 {
-  background-color: rgb(var(--red2), var(--green2), var(--blue2));
+    background-color: rgb(var(--red2), var(--green2), var(--blue2));
 }
+
 #button3 {
-  background-color: rgb(var(--red3), var(--green3), var(--blue3));
+    background-color: rgb(var(--red3), var(--green3), var(--blue3));
 }
+
 #button4 {
-  background-color: rgb(var(--red4), var(--green4), var(--blue4));
+    background-color: rgb(var(--red4), var(--green4), var(--blue4));
 }
-.help-block
-{
-  color: red;
-  font-size:20px;
+
+.help-block {
+    color: red;
+    font-size: 20px;
 }

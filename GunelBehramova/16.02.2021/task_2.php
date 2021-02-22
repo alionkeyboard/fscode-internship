@@ -1,19 +1,20 @@
 <?php
 
-function elementi_goster($array, $index)
+function elementi_goster ( $array, $index )
 {
-	
-	foreach ($array as $index){
-	echo $index;
+
+	foreach ( $array as $index )
+	{
+		echo $index;
 	}
 }
 
 $array = [
-	'key' => 'value',
+	'key'  => 'value',
 	'key1' => 'value2'
-	
-	];
 
-echo elementi_goster ($array, 0);
+];
+
+echo elementi_goster( $array, 0 );
 
 ?>

@@ -1,26 +1,32 @@
-<?php 
-  function strtoarr( $metn , $simvol ) {
-      $arr = [];
-      $herf =  "";
+<?php
 
-	  for ( $i = 0, $j = 0; isset( $metn[ $j ] ) ; $j++ ) {
+function strtoarr ( $metn, $simvol )
+{
+	$arr  = [];
+	$herf = "";
 
-        if ( $metn[ $j ] != $simvol ) {
-          $herf .= $metn[ $j ]; 
-        }
+	for ( $i = 0, $j = 0; isset( $metn[ $j ] ); $j++ )
+	{
 
-        $arr[ $i ] = $herf;
+		if ( $metn[ $j ] != $simvol )
+		{
+			$herf .= $metn[ $j ];
+		}
 
-        if ( $metn[ $j ] == $simvol ) {
-          $i += 1;
-          $herf =  "";
-        }  
+		$arr[ $i ] = $herf;
 
-      }
+		if ( $metn[ $j ] == $simvol )
+		{
+			$i    += 1;
+			$herf = "";
+		}
 
-      print_r( $arr );
-      echo "<br>";
-  }
-      strtoarr("Ravan:Sadigli:1999:AU",":");
-      strtoarr("15.02.2021",".");
+	}
+
+	print_r( $arr );
+	echo "<br>";
+}
+
+strtoarr( "Ravan:Sadigli:1999:AU", ":" );
+strtoarr( "15.02.2021", "." );
 ?>

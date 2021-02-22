@@ -1,164 +1,177 @@
-<?php 
+<?php
 
-	$sinif = [
+$sinif = [
 
-		'ad' => [
-			'Nermin Eliyeva',
-			'Kamil Rahimli',
-			'Zaur Qurbaneliyev',
-			'Melahet Isgenderli',
-			'Ali Rzayev',
-			'Ramin Orucov',
-			'Veli Kerimli',
-			'Zamiq Aliyev',
-			'Esmaye Mustafayeva',
-			'Veli kerimli',
-		],
+	'ad' => [
+		'Nermin Eliyeva',
+		'Kamil Rahimli',
+		'Zaur Qurbaneliyev',
+		'Melahet Isgenderli',
+		'Ali Rzayev',
+		'Ramin Orucov',
+		'Veli Kerimli',
+		'Zamiq Aliyev',
+		'Esmaye Mustafayeva',
+		'Veli kerimli',
+	],
 
-		'yash' => [
-			2,
-			19,
-			12,
-			12,
-			11,
-			19,
-			13,
-			2,
-			18,
-			18,
-		],
+	'yash' => [
+		2,
+		19,
+		12,
+		12,
+		11,
+		19,
+		13,
+		2,
+		18,
+		18,
+	],
 
-		'cins' => [
-			'q',
-			'k',
-			'k',
-			'q',
-			'k',
-			'k',
-			'k',
-			'k',
-			'q',
-			'k',
-		],
+	'cins' => [
+		'q',
+		'k',
+		'k',
+		'q',
+		'k',
+		'k',
+		'k',
+		'k',
+		'q',
+		'k',
+	],
 
+];
 
+function sagird ( $sinif )
+{
 
-	];
+	$oglan = 0;
+	$qiz   = 0;
+	$cins  = $sinif[ 'cins' ];
+	$say   = count( $cins );
 
+	for ( $i = 0; $i < $say; $i++ )
+	{
+		if ( $cins[ $i ] == 'q' )
+		{
+			$qiz += 1;
+		}
+		else
+		{
+			$oglan += 1;
+		}
+	}
 
-	function sagird($sinif){
+	return 'Sinifə ' . $oglan . ' oglan və ' . $qiz . ' qız var';
+}
 
-		$oglan = 0;
-		$qiz = 0;
-		$cins = $sinif['cins'];
-		$say = count($cins);
+function ortalama ( $sinif )
+{
 
-		for ($i=0; $i < $say; $i++) { 
-			if ($cins[$i] == 'q') {
-				$qiz+=1;
-			}else{
-				$oglan+=1;
+	$yash  = $sinif[ 'yash' ];
+	$say   = count( $yash );
+	$umumi = 0;
+
+	for ( $i = 0; $i < $say; $i++ )
+	{
+		$umumi += $yash[ $i ];
+	}
+
+	$ortalama = $umumi / $say;
+
+	return 'Sinifin ortalama yaşı ' . $ortalama . '-dir';
+}
+
+function boyuk ( $sinif )
+{
+
+	$yash  = $sinif[ 'yash' ];
+	$say   = count( $yash );
+	$boyuk = 0;
+
+	for ( $i = 0; $i < $say; $i++ )
+	{
+		$n = $i + 1;
+
+		if ( isset( $yash[ $n ] ) )
+		{
+
+			if ( $yash[ $boyuk ] < $yash[ $n ] )
+			{
+				$boyuk = $n;
 			}
-		}
 
-		return 'Sinifə '.$oglan.' oglan və '.$qiz.' qız var';
+		}
 	}
 
-	function ortalama($sinif){
+	echo "Sinifin yashca boyukleri<br>";
 
-		$yash = $sinif['yash'];
-		$say = count($yash);
-		$umumi = 0;
+	for ( $i = 0; $i < $say; $i++ )
+	{
 
-		for ($i=0; $i < $say; $i++) { 
-			$umumi+=$yash[$i]; 
+		if ( $yash[ $i ] == $yash[ $boyuk ] )
+		{
+
+			echo $sinif[ 'ad' ][ $i ] . '<br>';
 		}
-
-		$ortalama = $umumi/$say;
-
-		return 'Sinifin ortalama yaşı '.$ortalama.'-dir';
 	}
 
-	function boyuk($sinif){
+}
 
-		$yash = $sinif['yash'];
-		$say = count($yash);
-		$boyuk = 0;
+function kicik ( $sinif )
+{
 
-		for ($i=0; $i < $say; $i++) { 
-			$n = $i+1;
+	$yash  = $sinif[ 'yash' ];
+	$say   = count( $yash );
+	$kicik = 0;
 
-			 if (isset($yash[$n])) {
+	for ( $i = 0; $i < $say; $i++ )
+	{
+		$n = $i + 1;
 
-			 	if($yash[$boyuk]<$yash[$n]){
-			 		$boyuk = $n;
-			 	}
-			 	
-			 }
-		}
+		if ( isset( $yash[ $n ] ) )
+		{
 
-		echo "Sinifin yashca boyukleri<br>";
-		
-		for ($i=0; $i < $say; $i++) { 
-
-			if ($yash[$i]==$yash[$boyuk]) {
-
-				echo $sinif['ad'][$i].'<br>';
+			if ( $yash[ $kicik ] > $yash[ $n ] )
+			{
+				$kicik = $n;
 			}
+
 		}
-
-		
 	}
 
-	function kicik($sinif){
+	echo "Sinifin yashca kicikleri<br>";
 
-		$yash = $sinif['yash'];
-		$say = count($yash);
-		$kicik = 0;
+	for ( $i = 0; $i < $say; $i++ )
+	{
 
-		for ($i=0; $i < $say; $i++) { 
-			$n = $i+1;
-		
-			 if (isset($yash[$n])) {
+		if ( $yash[ $i ] == $yash[ $kicik ] )
+		{
 
-			 	if($yash[$kicik]>$yash[$n]){
-			 		$kicik = $n;
-			 	}
-			 	
-			 }
+			echo $sinif[ 'ad' ][ $i ] . '<br>';
 		}
-		
-		echo "Sinifin yashca kicikleri<br>";
-
-		for ($i=0; $i < $say; $i++) { 
-
-			if ($yash[$i]==$yash[$kicik]) {
-
-				echo $sinif['ad'][$i].'<br>';
-			}
-		}	
-		
 	}
 
-	function say($sinif){
+}
 
-		$ad = $sinif['ad'];
-		$say = count($ad);
+function say ( $sinif )
+{
 
-		return 'Sinifdə cəmi '.$say.' şagird var';
-	}
+	$ad  = $sinif[ 'ad' ];
+	$say = count( $ad );
 
-	echo sagird($sinif);
-	echo "<br>";
-	echo ortalama($sinif);
-	echo "<br>";
-	boyuk($sinif);
-	echo "<br>";
-	kicik($sinif);
-	echo "<br>";
-	echo say($sinif);
+	return 'Sinifdə cəmi ' . $say . ' şagird var';
+}
 
-	
-	
+echo sagird( $sinif );
+echo "<br>";
+echo ortalama( $sinif );
+echo "<br>";
+boyuk( $sinif );
+echo "<br>";
+kicik( $sinif );
+echo "<br>";
+echo say( $sinif );
 
- ?>
+?>

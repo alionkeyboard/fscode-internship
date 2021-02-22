@@ -22,8 +22,7 @@ function axtar ( $list, $axtar )
 	}
 }
 
-$seherler =
-[
+$seherler = [
 	'Baku',
 	'Berlin',
 	'Brooklyn',

@@ -14,26 +14,25 @@ function isExist($arr,$value)
     echo "False";
 }*/
 
-
 //boolean form
-function isExist($arr,$value)
+function isExist ( $arr, $value )
 {
-    for ($i = 0; $i<count($arr); $i++)
-    {
-        if($arr[$i] == $value)
-        {
-            return true;
-        }
-    }
-    return false;
+	for ( $i = 0; $i < count( $arr ); $i++ )
+	{
+		if ( $arr[ $i ] == $value )
+		{
+			return TRUE;
+		}
+	}
+
+	return FALSE;
 }
 
-
-$cities = ['Baku','Moscow','London','Istanbul'];
+$cities   = [ 'Baku', 'Moscow', 'London', 'Istanbul' ];
 $search_1 = "Prague";
 $search_2 = "Baku";
 
-(isExist($cities,$search_2)) ? print("True"): print("False");
+( isExist( $cities, $search_2 ) ) ? print( "True" ) : print( "False" );
 
 //isExist($cities,$search_2);
 ?>
