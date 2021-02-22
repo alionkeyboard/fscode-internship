@@ -6,5 +6,5 @@
  * Funksiya hər dəfə  təsadüfi olaraq bu iki cavabdan birini qaytarmalıdır. Nümunə:
  */
 
-$result = array("Xəritə", "Pilləkən")[random_int(0,1)];
+$result = [ "Xəritə", "Pilləkən" ][ random_int( 0, 1 ) ];
 echo "Qəpiyin $result üzü düşdü.";

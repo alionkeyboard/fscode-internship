@@ -1,9 +1,7 @@
-#result,#loading
-{
+#result, #loading {
     display: none;
 }
 
-#loading
-{
+#loading {
     width: 100px;
 }

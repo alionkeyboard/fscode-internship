@@ -1,27 +1,33 @@
-<?php 
+<?php
 
 /*Ədədin mənfi, müsbət və ya 0 olduğunu təyin edən funksiya. Əgər verilən dəyər ədəd deyilsə funksiya bunu bildirsin*/
 
 $a = 0;
 
-function teyin($a)
+function teyin ( $a )
 {
-	
 
-	if ($a>0) {
+	if ( $a > 0 )
+	{
 		echo $a . " => müsbət ədəddir <br>";
-	}elseif ($a<0) {
-		echo $a. " => mənfi ədəddir <br>";
-	}elseif ($a===0) {
+	}
+	else if ( $a < 0 )
+	{
+		echo $a . " => mənfi ədəddir <br>";
+	}
+	else if ( $a === 0 )
+	{
 		echo " Siz $a daxil etmisiz <br>";
-	}elseif ($a=undefined) {
+	}
+	else if ( $a = undefined )
+	{
 		echo " Bu dəyər deyil ";
 	}
 }
-teyin(5);
-teyin(-5);
-teyin(0);
-teyin("0");
 
+teyin( 5 );
+teyin( -5 );
+teyin( 0 );
+teyin( "0" );
 
- ?>
+?>

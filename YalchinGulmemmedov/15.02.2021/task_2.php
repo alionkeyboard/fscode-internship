@@ -1,38 +1,35 @@
-
-
 <?php
 
-function in_array_search($array,$search)
+function in_array_search ( $array, $search )
 {
-	$equal=false;
-    for ($i = 0; $i < count($array); $i++)
-    {
-        if ($search == $array[$i])
-        {
-			$equal=true;
-			
-		
-		}	
-    }
-	if($equal===true){
+	$equal = FALSE;
+	for ( $i = 0; $i < count( $array ); $i++ )
+	{
+		if ( $search == $array[ $i ] )
+		{
+			$equal = TRUE;
+
+		}
+	}
+	if ( $equal === TRUE )
+	{
 		echo "true";
 	}
-	else{
+	else
+	{
 		echo "false";
 	}
-	
-	
-    
-}
-	$array=
-	[
-		'baki',
-		'gence',
-		'lerik',
-		'quba',
 
-	];
-	$search="gece";
-	in_array_search($array,$search);
+}
+
+$array  = [
+	'baki',
+	'gence',
+	'lerik',
+	'quba',
+
+];
+$search = "gece";
+in_array_search( $array, $search );
 
 ?>

@@ -1,4 +1,5 @@
 <?php
+
 function sahmat_cek ()
 {
 	$str = "abcdefgh";//string for the bottom part border of the chessboard

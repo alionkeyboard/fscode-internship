@@ -1,27 +1,37 @@
-<?php 
+<?php
+/*  Ekranda yazı yazmaq üçün input və submit etmək üçün button olacaq. Submit edəndə bizə göndərilən yazının email olub-olmadığını deyəcək. Real email-ləri tapmağı lazım deyil, funksiya email-in yazılış formasına əsasən cavab versə bəsdir.  */
 
-/*Ədədin mənfi, müsbət və ya 0 olduğunu təyin edən funksiya. Əgər verilən dəyər ədəd deyilsə funksiya bunu bildirsin*/
-
-$a = 0;
-
-function teyin($a)
+function mailType ( $mail )
 {
-	
-
-	if ($a>0) {
-		echo $a . " => müsbət ədəddir <br>";
-	}elseif ($a<0) {
-		echo $a. " => mənfi ədəddir <br>";
-	}elseif ($a===0) {
-		echo " Siz $a daxil etmisiz <br>";
-	}elseif ($a=undefined) {
-		echo " Bu dəyər deyil ";
+	if ( isset( $_POST[ 'submit' ] ) )
+	{
+		if ( filter_var( $_POST[ 'yoxla' ], FILTER_VALIDATE_EMAIL ) )
+		{
+			echo $_POST[ 'yoxla' ] . " -> Bu mail duzgun formatdadır";
+		}
+		else
+		{
+			echo $_POST[ 'yoxla' ] . " -> Email formatınız uğurlu secilməyib";
+		}
 	}
 }
-teyin(5);
-teyin(-5);
-teyin(0);
-teyin("0");
+
+mailType( $mail );
+?>
 
 
- ?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mail yoxla</title>
+	</head>
+	<body>
+		<form method="POST" action="">
+			<input type="text" name="yoxla">
+			<button type="submit" name="submit">Gonder</button>
+
+
+		</form>
+
+	</body>
+</html>

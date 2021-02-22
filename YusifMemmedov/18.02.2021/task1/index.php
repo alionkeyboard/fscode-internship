@@ -24,7 +24,7 @@
 
 				<div class='col-12'>
 					<div id='info' class='alert alert-success my-3 mx-auto' style='width:600px'>
-						-Search results will be displayed right here.</br>				-Paste a URL and 'Get the Result'
+						-Search results will be displayed right here.</br>                -Paste a URL and 'Get the Result'
 					</div>
 				</div>
 

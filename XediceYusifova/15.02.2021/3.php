@@ -5,31 +5,33 @@
  */
 
 $array = [
-    'cixarin',
-    'keyfini',
-    'gunun',
-    'bu'
+	'cixarin',
+	'keyfini',
+	'gunun',
+	'bu'
 ];
 
 $n = 0; //count əvəzi
 
-while (isset($array[$n])){
-    $n++;
+while ( isset( $array[ $n ] ) )
+{
+	$n++;
 }
 echo "[";
 
-for($i=$n-1; $i>0; $i--){
-    echo "<pre>   '$array[$i]',</pre>";
+for ( $i = $n - 1; $i > 0; $i-- )
+{
+	echo "<pre>   '$array[$i]',</pre>";
 }
-echo "<pre>   '" . $array[0] . "'</pre>";
+echo "<pre>   '" . $array[ 0 ] . "'</pre>";
 echo "]";
 
- /**
-  * [
-  *    'bu',
-  *    'gunun',
-  *    'keyfini',
-  *    'cixarin'
-  * ]
-  */
+/**
+ * [
+ *    'bu',
+ *    'gunun',
+ *    'keyfini',
+ *    'cixarin'
+ * ]
+ */
 

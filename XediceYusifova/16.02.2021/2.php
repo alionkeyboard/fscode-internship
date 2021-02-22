@@ -9,31 +9,36 @@
  * Hazır funksiyalar istifadə edə bilərsiz.
  */
 
-function elementi_goster($array, $index){
+function elementi_goster ( $array, $index )
+{
 
-    if($index < count($array) && $index >= 0){
-        $arrayKey = array_keys($array);
+	if ( $index < count( $array ) && $index >= 0 )
+	{
+		$arrayKey = array_keys( $array );
 
-        foreach($arrayKey as $key => $value){
+		foreach ( $arrayKey as $key => $value )
+		{
 
-            if($key == $arrayKey[$index]){
-                return "[$index] => " . $array[$arrayKey[$index]];  //arrayKey[index] = key və array[key] = value
-            }
-        }
-    }
-    else{
-        return "<script>alert('İndex >=0 və massivin uzunluğundan kiçik olmalıdır!');</script>";
-    }
+			if ( $key == $arrayKey[ $index ] )
+			{
+				return "[$index] => " . $array[ $arrayKey[ $index ] ];  //arrayKey[index] = key və array[key] = value
+			}
+		}
+	}
+	else
+	{
+		return "<script>alert('İndex >=0 və massivin uzunluğundan kiçik olmalıdır!');</script>";
+	}
 }
 
 $array = [
-    'key1' => 'value1',
-    'key2' => 'value2',
-    'key3' => 'value3',
-    'key4' => 'value4'    
+	'key1' => 'value1',
+	'key2' => 'value2',
+	'key3' => 'value3',
+	'key4' => 'value4'
 ];
 
-echo elementi_goster($array, 3);
+echo elementi_goster( $array, 3 );
 
 //$axtar1 -> false
 //$axtar2 -> true

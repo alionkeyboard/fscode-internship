@@ -1,19 +1,14 @@
-<?php 
+<?php
 
-$array = array(
-  'yazici' => 'Rovsen Abdullaoglu' ,
-	'alim' => 'Cemshid');
+$array = [
+	'yazici' => 'Rovsen Abdullaoglu',
+	'alim'   => 'Cemshid'
+];
 
-$array = extract($array);
-
- 	
- 
-
-
+$array = extract( $array );
 
 echo $yazici;
- 
 
- // Qeyd etdiyiniz funksiyani yarada bilmedim
+// Qeyd etdiyiniz funksiyani yarada bilmedim
 
- ?>
+?>

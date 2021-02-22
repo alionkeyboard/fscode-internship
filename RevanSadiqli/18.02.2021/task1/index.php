@@ -16,7 +16,8 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
-							<input type="text" placeholder="Link e.g(https://www.instagram.com/fscode/)" value="<?php if ( isset( $url ) ) {
+							<input type="text" placeholder="Link e.g(https://www.instagram.com/fscode/)" value="<?php if ( isset( $url ) )
+							{
 								echo $url;
 							} ?>" name="url" required>
 						</div>
