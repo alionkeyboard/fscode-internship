@@ -1,5 +1,9 @@
 <?php
-
+$input = "";
+$floor = "";
+$fraction_1 = "";
+$fraction_2 = "";
+$ceil = "";
 function floorNum ( $decimal )
 {
 	return (int) $decimal;

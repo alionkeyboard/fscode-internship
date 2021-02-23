@@ -1,5 +1,13 @@
 <?php
-
+$noUser = "";
+$img = "";
+$numberOfPosts = "";
+$followersCount = "";
+$followCount = "";
+$fullName = "";
+$bio = "";
+$private  = "";
+$posts = [];
 function getJSON ( $url )
 {
 	$json = file_get_contents( $url );
@@ -42,7 +50,7 @@ function getUserPosts ( $data )
 	return $data[ 'graphql' ][ 'user' ][ 'edge_owner_to_timeline_media' ][ 'edges' ];
 }
 
-if ( $_POST[ 'username' ] != "" )
+if ( isset($_POST['username']) )
 {
 
 	$data = getJSON( ( "https://www.instagram.com/" . $_POST[ 'username' ] . "/?__a=1" ) );

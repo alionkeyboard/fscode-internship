@@ -30,8 +30,8 @@ include './controller/naturalNumber.php';
 						</tr>
 						<tr>
 							<td><?php echo $input ?></td>
-							<td><?php echo $floor . "(" . $fraction_1 . ")" ?></td>
-							<td><?php echo $ceil . "(" . $fraction_2 . ")" ?></td>
+							<td><?php if($floor!="" && $fraction_1!=""){echo $floor . "(" . $fraction_1 . ")";}?></td>
+							<td><?php if($ceil!="" && $fraction_2!=""){echo $ceil . "(" . $fraction_2 . ")";} ?></td>
 						</tr>
 					</table>
 				</div>
