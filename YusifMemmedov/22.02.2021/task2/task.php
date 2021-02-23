@@ -32,7 +32,7 @@ function encode_string( $str , $deg ){
             
             //verilen shifreleme derecesine gore goterilecek char-in indexinin teyin olunmasi
             if( $deg < 0 ) {
-                $c_key = $letter_count + $deg % $letter_count;
+                $c_key = $letter_count + ( $c_key + $deg ) % $letter_count;
             }
             else {
                 $c_key += $deg % $letter_count;
