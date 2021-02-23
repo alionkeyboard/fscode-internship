@@ -1,4 +1,4 @@
-<?php 
+<?php /*Nəticə təkrəqəmli ədəd olana qədər verilmiş inputdakı ədədin rəqəmlərini cəmləyən funksiya. */
 
 $ed = 39990;
 
