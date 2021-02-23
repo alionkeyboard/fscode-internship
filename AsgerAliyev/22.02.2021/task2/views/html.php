@@ -17,7 +17,7 @@
 				<button type="submit" class="btn btn-primary">SUBMIT</button>
 			</div>
 		</form>
-		<?php if ( isset( $_POST ) ):?>
+		<?php if ( isset( $coded_message ) ):?>
 		<div class="alert alert-success" role="alert">
 		<?php echo $coded_message ?>
 		</div>
