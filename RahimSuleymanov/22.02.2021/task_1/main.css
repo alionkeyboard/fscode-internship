@@ -1,0 +1,101 @@
+body{
+    background-color: #272727;
+    color: white;
+}
+
+input[type=text],textarea[id=string],.delimeterDiv,.delimeterRightBtn,.list-group-item{
+    background-color: #272727 !important;
+    color: white !important;
+}
+
+.delimeterDiv{
+    cursor: pointer;
+}
+
+.delimeterList{
+    position: absolute;
+    top: 108px;
+    left: 135px;
+    display: none;
+}
+
+.flagsList{
+    position: absolute;
+    top: 108px;
+    right: 133px;
+    display: none;
+}
+
+.delimeterItem{
+    background-color: #272727 !important;
+    width: 50px;
+}
+
+.delimeterItem:hover{
+    background-color: grey !important;
+}
+
+.flagItem{
+    background-color: #272727 !important;
+    width: 150px;
+}
+
+.flagItem:hover{
+    background-color: grey !important;
+}
+
+.fa-check{
+    display: none;
+}
+
+.ellipsis,.list-group-item:hover{
+    cursor: pointer;
+}
+
+#delimeter{
+    float: left;
+    width: 50px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+}
+#result, #loading {
+    display: none;
+    margin-top: 100px;
+}
+
+#loading {
+    width: 100px;
+}
+
+a.tip {
+color: white;
+border: 1px solid black;
+text-decoration: none
+}
+a.tip:hover {
+    border: 1px solid white;
+    position: relative;
+    font-size: 25px;
+}
+a.tip span {
+    color: white;
+    display: none
+}
+a.tip:hover span {
+    background-color: #34495e;
+    border: #c0c0c0 1px dotted;
+    padding: 5px;
+    display: block;
+    z-index: 100;
+    left: 0px;
+    margin: 10px;
+    margin-top: 22px;
+    width: 150px;
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+}

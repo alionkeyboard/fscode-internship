@@ -21,7 +21,7 @@ include './controller/instagram.php'
 			<header id="header">
 				<div class="row">
 					<div class="col-md-4 col-sm-6">
-						<img src="./images//1b47f9d0e595.png" alt="logo">
+						<a href=""><img src="./images//1b47f9d0e595.png" alt="logo"></a> 
 					</div>
 					<div class="col-md-8 col-sm-6">
 						<form action="" method="POST">
