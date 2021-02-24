@@ -2,31 +2,32 @@
 
 $i          = 1;
 $all        = [];
-$page_count = 1;
 
-for ( $page = 1; $page <= $page_count; $page++ ) // Butun sehifelerde ishlemesi ucun loop
+$ch = curl_init(); // curl  qurulmasi
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, TRUE );
+
+for ( $page = 1; $page <= ( isset( $page_count )  ? $page_count : 1 ); $page++ ) // Butun sehifelerde ishlemesi ucun loop
 {
 
 	$url = "https://www.booknetic.com/blog?page=$page";
-	$ch  = curl_init(); // curl  qurulmasi
 
-	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, TRUE );
 	curl_setopt( $ch, CURLOPT_URL, $url );
 
 	$site = curl_exec( $ch );
 
-	curl_close( $ch );
-
 	// postlari elde etmek ucun bize lazim olan hisseinin cekilmesi
 	preg_match_all( '@<div class="blog-item">(.*?)</div>@si', $site, $posts );
 
-	// Page sayinin tapilmasi ucun lazim olan hissenin cekilmesi
-	preg_match_all( '@li class="page-item"><a class="page-link" href="https://www\.booknetic\.com/blog\?page=(.*?)">(.*?)</a></li>@si', $site, $pages );
-
-	// burda  esas sehifeden gedilen butun diger sehifelerinin linkini veren array-den en boyuk elementi tapib yuxaridaki loop ucun shert olaraq gonderirik
-	if ( isset( $pages[ 1 ] ) )
+	if ( ! isset( $page_count ) )
 	{
-		$page_count = max( $pages[ 1 ] );
+		// Page sayinin tapilmasi ucun lazim olan hissenin cekilmesi
+		preg_match_all( '@li class="page-item"><a class="page-link" href="https://www\.booknetic\.com/blog\?page=(.*?)">(.*?)</a></li>@si', $site, $pages );
+
+		// burda  esas sehifeden gedilen butun diger sehifelerinin linkini veren array-den en boyuk elementi tapib yuxaridaki loop ucun shert olaraq gonderirik
+		if ( isset( $pages[ 1 ] ) )
+		{
+			$page_count = max( $pages[ 1 ] );
+		}
 	}
 
 	foreach ( $posts[ 0 ] as $post ) // Bu loop her page-deki butun postlari o page-in arrayine elave edir
@@ -45,7 +46,7 @@ for ( $page = 1; $page <= $page_count; $page++ ) // Butun sehifelerde ishlemesi 
 		$url         = $url[ 1 ][ 0 ];
 
 		// melumatlarin array-a daxil edilmesi
-		$all[ "page_$page" ][] = [
+		$all[ "page_$page" ][ $i ] = [
 			"post_$i" => [
 				'title'       => $title,
 				'date'        => $date,
@@ -57,5 +58,7 @@ for ( $page = 1; $page <= $page_count; $page++ ) // Butun sehifelerde ishlemesi 
 		$i++;
 	}
 }
+
+curl_close( $ch );
 
 print_r( $all );
