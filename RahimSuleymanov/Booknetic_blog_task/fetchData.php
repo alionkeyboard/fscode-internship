@@ -8,7 +8,6 @@ function get_data ( $url )
 	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
 	curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, $timeout );
 	curl_setopt( $ch, CURLOPT_USERAGENT, 'spider' );
-	curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, FALSE );
 	curl_setopt( $ch, CURLOPT_HEADER, FALSE );
 	curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, FALSE );
 	$data = curl_exec( $ch );
@@ -17,43 +16,40 @@ function get_data ( $url )
 	return $data;
 }
 
-
-$url = 'https://www.booknetic.com/blog';
-$data = get_data($url);
-$pattern = '@<li class="page-item">(.*?)</li>@si';
-preg_match_all($pattern,$data,$matches);
-// blog paylasildigini kontrol etdim
-
-if(count($matches[1]) !== 0)
+$loop       = true;
+$i          = 1;
+$pageCount  = 1;
+$arr        = [];//butun melumatlar bu arrayde saxlanacaq
+$daily      = [];//gundelik melumatlari bu arraye elave edicik
+$news       = [];//her bir xeberin parametrlerini bu arrayde tutaciq
+while($loop === true)
 {
-    $arr    = [];//butun melumatlar bu arrayde saxlanacaq
-    $daily  = [];//gundelik melumatlari bu arraye elave edicik
-    $news   = [];//her bir xeberin parametrlerini bu arrayde tutaciq
+    $url = 'https://www.booknetic.com/blog?page='.$i;
+    $data = get_data($url);
 
-    for($i=1;$i<=count($matches[1]);$i++)
+    //sehife sayi
+    if($i === 1)
     {
-        $url = 'https://www.booknetic.com/blog?page='.$i;
-        $data = get_data($url);
-        
+        preg_match_all('@<li class="page-item">(.*?)</li>@si',$data,$pages);
+        $pageCount      = count($pages[1]);
+    }
+
+    if($i <= $pageCount && $pageCount !== 0)
+    {
         // basliqlari aliram
-        $pattern = '@<h2>(.*?)</h2>@si';
-        preg_match_all($pattern,$data,$titles);
+        preg_match_all('@<h2>(.*?)</h2>@si',$data,$titles);
         
         // tarixleri aliram
-        $pattern = '@<span class="bl-date">(.*?)</span>@si';
-        preg_match_all($pattern,$data,$dates);
+        preg_match_all('@<span class="bl-date">(.*?)</span>@si',$data,$dates);
 
         // descriptionu aliram
-        $pattern = '@<p>(.*?)</p>@si';
-        preg_match_all($pattern,$data,$descriptions);
+        preg_match_all('@<p>(.*?)</p>@si',$data,$descriptions);
 
         // sekili aliram
-        $pattern = '@<img src="(.*?)" alt="" class="img-fluid">@si';
-        preg_match_all($pattern,$data,$images);
+        preg_match_all('@<img src="(.*?)" alt="" class="img-fluid">@si',$data,$images);
 
         // linkin aliram
-        $pattern = '@<a href="(.*?)" class="btn btn-fill">Read More</a>@';
-        preg_match_all($pattern,$data,$urls);
+        preg_match_all('@<a href="(.*?)" class="btn btn-fill">Read More</a>@',$data,$urls);
 
         if(count($titles[1]) !== 0)
         {
@@ -71,15 +67,20 @@ if(count($matches[1]) !== 0)
                     $news['image']          = $images[1][$j];
                     $news['url']            = $urls[1][$j-1];
                     
-                    $daily[] = $news;
-
-                    $new     = [];
+                    $daily[]                = $news;
+                    $new                    = [];
                 }
             }
-            $key = 'page_'.$i;
-            $arr[$key] = $daily;
-            $daily = [];
+            
+            $key        = 'page_'.$i;
+            $arr[$key]  = $daily;
+            $daily      = [];
         }
+        $i++;
+    }
+    else
+    {
+        $loop   = false;
     }
 }
 
