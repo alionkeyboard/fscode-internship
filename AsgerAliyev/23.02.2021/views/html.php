@@ -7,10 +7,16 @@
 		<title>PicLink</title>
 	</head>
 	<body>
-		<form action="" method="post">
-			<input type="file" name="image_url" required>
-			<button type="submit">SUBMIT</button>
+		<form action="" method="post" enctype="multipart/form-data">
+			<input type="file" name="file" required>
+			<button type="submit" name="submit">SUBMIT</button>
 		</form>
+        <br>
+        <?php foreach ($links as $link):?>
+        <li>
+            <a href="<?php echo $link[ 'image_url' ] ?>"><?php echo $link[ 'image_url' ] ?></a> | <?php echo $link[ 'upload_time' ]?>
+        </li>
+        <?php endforeach;?>
 
 	</body>
 </html>
