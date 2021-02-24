@@ -19,7 +19,8 @@ function ciper($num,$str,$alphabet)
 }
 
 $alphabet = ['a','b','c','ç','d','e','ə','f','g','ğ','h','x','ı','i','j','k','q','l','m','n','o','ö','p','r','s','ş','t','u','ü','v','y','z'];
-
+$error = "";
+$result = [];
 if(isset($_POST['submit']))
 {
     if(empty($_POST['textarea']) || empty($_POST['number']))
