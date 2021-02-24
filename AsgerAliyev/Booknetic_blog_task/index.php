@@ -46,14 +46,12 @@ for ( $page = 1; $page <= ( isset( $page_count )  ? $page_count : 1 ); $page++ )
 		$url         = $url[ 1 ][ 0 ];
 
 		// melumatlarin array-a daxil edilmesi
-		$all[ "page_$page" ][ $i ] = [
-			"post_$i" => [
-				'title'       => $title,
-				'date'        => $date,
-				'description' => $description,
-				'image'       => $image,
-				'url'         => $url
-			]
+		$all[ "page_$page" ][ "post_$i" ] = [
+			'title'       => $title,
+			'date'        => $date,
+			'description' => $description,
+			'image'       => $image,
+			'url'         => $url
 		];
 		$i++;
 	}
