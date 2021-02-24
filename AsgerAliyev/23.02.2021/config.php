@@ -1,6 +1,6 @@
 <?php
 
-//PDO ile Database connection-in qurulmasi
+//PDO vasitesi ile Database connection-in qurulmasi
 
 $servername = 'localhost';
 $username   = 'root';

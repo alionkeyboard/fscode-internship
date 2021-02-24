@@ -15,7 +15,7 @@
         <?php foreach ($links as $link):?>
         <li>
             <a href="<?php echo $link[ 'image_url' ] ?>"><?php echo $link[ 'image_url' ] ?></a> | <?php echo $link[ 'upload_time' ]?>
-        </li>
+        </li><br>
         <?php endforeach;?>
 
 	</body>
