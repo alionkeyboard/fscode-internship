@@ -45,10 +45,23 @@ for($currentPage; $currentPage<=$totalPages; $currentPage++)
     //setting an array
     for($i=0;$i<count($date[1]);$i++)
     {
+<<<<<<< HEAD
+        //skip first element, no need
+        $arr['page_'.$currentPage][$i]['title'] = $title[1][$i+1];
+
+        $arr['page_'.$currentPage][$i]['date'] = $date[1][$i];
+
+        //skip first element, no need
+        $arr['page_'.$currentPage][$i]['description'] = $description[1][$i+1];
+        $arr['page_'.$currentPage][$i]['image'] = $img[1][$i];
+
+        //each key in links array goes every 3 unit 0,3,6...
+=======
         $arr['page_'.$currentPage][$i]['title'] = $title[1][$i+1];
         $arr['page_'.$currentPage][$i]['date'] = $date[1][$i];
         $arr['page_'.$currentPage][$i]['description'] = $description[1][$i+1];
         $arr['page_'.$currentPage][$i]['image'] = $img[1][$i];
+>>>>>>> 07de2908008f6ce60c52ccd8fbaadfc9beec362d
         $arr['page_'.$currentPage][$i]['url'] = $links[$i*3];
         
     }
