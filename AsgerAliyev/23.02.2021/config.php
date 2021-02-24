@@ -1,5 +1,7 @@
 <?php
 
+//PDO ile Database connection-in qurulmasi
+
 $servername = 'localhost';
 $username   = 'root';
 $password   = '';

@@ -9,11 +9,11 @@ if ( isset( $_POST[ 'submit' ] ) )
     {
         $location = 'uploads/';
 
-        if( move_uploaded_file( $temp_name, $location . $name ) )
+        if( move_uploaded_file( $temp_name, $location . $name ) ) // shekli uploads folderine elave edirik
         {
             $url = $location . $name;
 
-            $sql = 'INSERT INTO pictures (image_url) VALUES (:image_url)';
+            $sql = 'INSERT INTO pictures (image_url) VALUES (:image_url)'; // folderdeki linki database-e elave edirik burda
             $res = $conn->prepare( $sql );
             $res->bindParam( ':image_url', $url );
             $res->execute();
@@ -25,6 +25,6 @@ if ( isset( $_POST[ 'submit' ] ) )
     }
 }
 
-$getLinks =  $conn->prepare( 'SELECT * FROM pictures' );
+$getLinks =  $conn->prepare( 'SELECT * FROM pictures' ); // DB-dan table-daki melumatlari cekirik, ve html hissesinde ekrana chap edirik
 $getLinks->execute();
 $links = $getLinks->fetchAll();
