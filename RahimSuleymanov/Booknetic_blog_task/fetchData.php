@@ -30,32 +30,26 @@ while($loop === true)
     //sehife sayi
     if($i === 1)
     {
-        $pattern        = '@<li class="page-item">(.*?)</li>@si';
-        preg_match_all($pattern,$data,$pages);
+        preg_match_all('@<li class="page-item">(.*?)</li>@si',$data,$pages);
         $pageCount      = count($pages[1]);
     }
 
     if($i <= $pageCount && $pageCount !== 0)
     {
         // basliqlari aliram
-        $pattern = '@<h2>(.*?)</h2>@si';
-        preg_match_all($pattern,$data,$titles);
+        preg_match_all('@<h2>(.*?)</h2>@si',$data,$titles);
         
         // tarixleri aliram
-        $pattern = '@<span class="bl-date">(.*?)</span>@si';
-        preg_match_all($pattern,$data,$dates);
+        preg_match_all('@<span class="bl-date">(.*?)</span>@si',$data,$dates);
 
         // descriptionu aliram
-        $pattern = '@<p>(.*?)</p>@si';
-        preg_match_all($pattern,$data,$descriptions);
+        preg_match_all('@<p>(.*?)</p>@si',$data,$descriptions);
 
         // sekili aliram
-        $pattern = '@<img src="(.*?)" alt="" class="img-fluid">@si';
-        preg_match_all($pattern,$data,$images);
+        preg_match_all('@<img src="(.*?)" alt="" class="img-fluid">@si',$data,$images);
 
         // linkin aliram
-        $pattern = '@<a href="(.*?)" class="btn btn-fill">Read More</a>@';
-        preg_match_all($pattern,$data,$urls);
+        preg_match_all('@<a href="(.*?)" class="btn btn-fill">Read More</a>@',$data,$urls);
 
         if(count($titles[1]) !== 0)
         {
@@ -73,14 +67,14 @@ while($loop === true)
                     $news['image']          = $images[1][$j];
                     $news['url']            = $urls[1][$j-1];
                     
-                    $daily[] = $news;
-
-                    $new     = [];
+                    $daily[]                = $news;
+                    $new                    = [];
                 }
             }
-            $key = 'page_'.$i;
-            $arr[$key] = $daily;
-            $daily = [];
+            
+            $key        = 'page_'.$i;
+            $arr[$key]  = $daily;
+            $daily      = [];
         }
         $i++;
     }
