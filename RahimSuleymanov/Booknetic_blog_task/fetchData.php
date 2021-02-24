@@ -35,7 +35,7 @@ while($loop === true)
         $pageCount      = count($pages[1]);
     }
 
-    if($i <= $pageCount)
+    if($i <= $pageCount && $pageCount !== 0)
     {
         // basliqlari aliram
         $pattern = '@<h2>(.*?)</h2>@si';
