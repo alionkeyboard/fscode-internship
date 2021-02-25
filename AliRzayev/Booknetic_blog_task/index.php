@@ -77,7 +77,7 @@ class BookneticLib
 			 * amma nezere almaq lazimdir ki, h2 ve p taqlari cox ishlenen taqlardi, sabah bir gun sehifeye
 			 * coxlu sayda h2 ve ya p taqlari elave oluna biler, ele olan halda ise onlari ayirmaq cetin olur
 			 *
-			 * ona gore de men ikinci usulu secdim, can rahatligi ile blog-item ile butun bloqlar ehatelenib ve
+			 * ona gore de men ikinci usulu secdim, blog-item ile butun bloqlar ehatelenib ve
 			 * bize lazim olan butun datalar icindedir, ona gore de ele blog-item ile cekib, sonra onlarin
 			 * icinde ozumuze lazim olanlari rahatliqla cekirik
 			 */
