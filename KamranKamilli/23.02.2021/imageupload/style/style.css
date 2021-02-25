@@ -1,0 +1,26 @@
+#imagecontainer {
+  display: inline-block;
+  margin-top: 20px;
+  text-align: center;
+}
+img {
+  width: 400px;
+  height: 300px;
+}
+#formcontainer {
+  text-align: center;
+}
+input[type="file"] {
+  border: 1px solid black;
+  width: 20em;
+}
+input[type="submit"] {
+  width: 20em;
+  height: 2em;
+}
+input[type="submit"]:hover {
+  color: red;
+}
+.help-block {
+  color: red;
+}

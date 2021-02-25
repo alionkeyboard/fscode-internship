@@ -2,8 +2,8 @@
 
 $content = file_get_contents( "https://www.havaproqnozu.com/baki-15-gunluk-hava-veziyyeti-taxmini.html" );
 
-$DOM = new DOMDocument();
-$DOM->loadHTML( $content );
+@$DOM = new DOMDocument();
+@$DOM->loadHTML( $content );
 
 $tableHeader = $DOM->getElementsByTagName( 'th' );
 $tableDetail = $DOM->getElementsByTagName( 'td' );
