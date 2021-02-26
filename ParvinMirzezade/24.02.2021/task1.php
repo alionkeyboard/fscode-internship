@@ -4,14 +4,18 @@
 if (isset($_POST['submit']))
  {
 
-     echo  $_POST['email'];
-     echo  $_POST['text']; 
+     $mail =  $_POST['email'];
+     $metn =  $_POST['text']; 
 
-       $file = fopen("text.txt", "a") or die('file acmaq mumkun olmadi');
-       $metn = $_POST['email']. "|" .$_POST['text']. "\n";
-       fwrite($file, $metn);
-       fclose($file);
- 
+     if (!empty($mail) and !empty($metn))
+      {
+        
+
+         $file = fopen("text.txt", "a") or die('file acmaq mumkun olmadi');
+         $metn = $_POST['email']. "|" .$_POST['text']. "\n";
+         fwrite($file, $metn);
+         fclose($file);
+      }
  }
 
 
@@ -38,17 +42,17 @@ if (isset($_POST['submit']))
                     
                         <div class="form-group">
                             <label for="exampleInputEmail">Email Address</label> <br><br>
-                            <input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="emailiniz daxil edin" ><br><br>
+                            <input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="emailinizi daxil edin" ><br><br>
                         </div>  
                     
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for ="description"> Message</label><br><br>
-                            <textarea  class="form-control" name="text" id="description" placeholder="mesajiniz bizimle bolusun"></textarea> <br><br>
+                            <textarea  class="form-control" name="text" id="description" placeholder="mesajinizi bizimle bolusun"></textarea> <br><br>
                         </div>
                         <div>
 
-                            <input type="submit" class="submit"  name="submit" value="send" >
+                            <input type="submit" class="submit"  name="submit" value="send"  >
                         </div>
                         
                     </div>
