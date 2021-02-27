@@ -1,0 +1,47 @@
+header {
+    background-color: blue;
+}
+
+#logo {
+    padding: 10px 35px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.main {
+    display: flex;
+}
+
+section {
+    background-color: rgba(222, 184, 135, 0.788);
+}
+
+.img {
+    background-color: rgba(126, 126, 126, 0.363);
+    width: 550px;
+    margin: 25px;
+}
+
+.img img {
+    display: block;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.img h1,
+p {
+    display: block;
+    padding-left: 30px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li a {
+    font-size: 26px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding-top: 10px;
+}
