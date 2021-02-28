@@ -12,14 +12,14 @@ img{
     height: 300px;
     width: 600px;
 }
-.resim{
+.photo{
     width: 100%;
     display: none;
 }
 img{
     width: 100%;
 }
-.ileri,.geri{
+.next,.prev{
     position: absolute;
     background: #3E3E3E;
     opacity: 0.6;
@@ -31,17 +31,17 @@ img{
     border-radius:40% ;
 
 }
-.ileri:hover,
-.geri:hover
+.next:hover,
+.prev:hover
 {
     opacity: 1;
 }
-.ileri{
+.next{
     right: 0;
 }
-.geri{
+.prev{
     left: 0;
 }
-.aktif{
+.active{
     display: block;
 }

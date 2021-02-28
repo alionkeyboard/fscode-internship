@@ -30,7 +30,7 @@
         $row=$select->fetchAll(PDO::FETCH_CLASS);
 
         foreach($row as $r){  
-            echo "<div class='resim'>";
+            echo "<div class='photo'>";
             echo "<img src='upload/$r->image_url' alt=''>";
             echo "</div>";
     
@@ -40,8 +40,8 @@
    
    
    
-    <div class="ileri" onClick="ileri()">></div>
-    <div class="geri" onClick="geri()"><</div>
+    <div class="next" onClick="next()">></div>
+    <div class="prev" onClick="prev()"><</div>
 </div>
 
 

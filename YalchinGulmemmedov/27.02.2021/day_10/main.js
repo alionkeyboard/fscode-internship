@@ -1,24 +1,24 @@
-var resim=document.getElementsByClassName('resim');
+var img=document.getElementsByClassName('photo');
 var index=0;
 function galery(){
-    if(index >=resim.length){
+    if(index >=img.length){
         index=0 ;
     }
     else if(index<0){
-        index=resim.length-1;
+        index=img.length-1;
     }
-    for(i=0; i<resim.length;i++){
-        resim[i].classList.remove('aktif');
+    for(i=0; i<img.length;i++){
+        img[i].classList.remove('active');
     }
-    resim[index].classList.add('aktif');
+    img[index].classList.add('active');
 console.log(index);
 }
 
-function ileri(){
+function next(){
     index++;
     galery();
 }
-function geri(){
+function prev(){
     index--;
     galery();
 }
