@@ -1,0 +1,59 @@
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 350px;
+}
+
+body {
+    background-image: url('1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+label {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10%;
+}
+
+.row {
+    padding-top: 50px;
+}
+
+#email {
+    width: 250px;
+    height: 35px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+}
+
+#text {
+    width: 250px;
+    height: 35px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    padding-left: 2px;
+}
+
+.btn {
+    display: block;
+    margin: auto;
+    color: rgb(10, 1, 1);
+    margin-top: 25px;
+    padding: 8px 25px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 5px rgba(22, 22, 22, 0.541);
+    border: none;
+}
+
+.btn:hover {
+    opacity: .8;
+}
