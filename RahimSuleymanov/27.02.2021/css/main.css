@@ -1,0 +1,43 @@
+.show-image{
+    width: 41vw;
+    margin: auto;
+    border:1.9px solid black;
+}
+
+img{
+    width: 40.7vw;
+    height: 70vh;
+}
+
+.switcher{
+    background-color: #34495e;
+    line-height: 10vh;
+    text-align: center;
+}
+
+.right{
+    display: block;
+}
+
+.left{
+    display: block;
+}
+
+.fa-chevron-right{
+    font-size: 7vw;
+    float: right;
+    color: white;
+    cursor: pointer;
+}
+
+.fa-chevron-left{
+    font-size: 7vw;
+    float: left;
+    color: white;
+    cursor: pointer;
+}
+
+.center{
+    font-size: 7vw;
+    color: white;
+}
