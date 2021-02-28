@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding:0;
+    
+}
+#container{
+    max-width: 640px;
+    position: relative;
+    margin:auto;
+}
+img{
+    height: 300px;
+    width: 600px;
+}
+.resim{
+    width: 100%;
+    display: none;
+}
+img{
+    width: 100%;
+}
+.ileri,.geri{
+    position: absolute;
+    background: #3E3E3E;
+    opacity: 0.6;
+    font-size: 20px;
+    padding: 10px;
+    color: aliceblue;
+    cursor: pointer;
+    top:50%;
+    border-radius:40% ;
+
+}
+.ileri:hover,
+.geri:hover
+{
+    opacity: 1;
+}
+.ileri{
+    right: 0;
+}
+.geri{
+    left: 0;
+}
+.aktif{
+    display: block;
+}
