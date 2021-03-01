@@ -1,0 +1,106 @@
+﻿    *{ 
+      box-sizing: border-box; 
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+    .slider { 
+      display: none; 
+    } 
+  
+    img { 
+      vertical-align: middle;
+    } 
+  
+    .container { 
+      max-width: 1000px; 
+      position: relative; 
+      margin: auto; 
+    } 
+
+    .fade{ 
+      -webkit-animation-name: fade-image; 
+      -webkit-animation-duration: 1.5s; 
+      animation-name: fade-image; 
+      animation-duration: 1.5s; 
+    } 
+  
+    @-webkit-keyframes fade-image { 
+      from {opacity: .4}  
+      to {opacity: 1} 
+    } 
+
+    .textid { 
+      color: #f2f2f2; 
+      font-size: 15px; 
+      padding: 11px 8px; 
+      position: absolute; 
+      right: 5px; 
+      bottom: 5px; 
+      width: 20%; 
+      background: rgba(0, 0, 0, .7); 
+      text-align: left; 
+      margin: 64px 28px;
+    } 
+
+    .textdate { 
+      color: #f2f2f2; 
+      font-size: 15px; 
+      padding: 6px 8px; 
+      position: absolute; 
+      right: 5px; 
+      bottom: 5px; 
+      width: 20%; 
+      background: rgba(0, 0, 0, .7); 
+      text-align: left; 
+      margin: 12px 28px;
+    } 
+
+    .style1 {
+      border-radius: 10px;
+      background-color: white;
+      padding: 10px;
+      width : 50%;
+      height: 50%;
+      margin: 200px 370px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .style1 {
+    margin: 50px 400px;
+    }
+
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px auto;
+      border: 1px solid #ccc;
+      border-radius: 70px;
+    }
+
+    button[type=submit] {
+      width: 100%;
+      background-color: #3bc3e0;
+      color: white;
+      padding: 12px 20px;
+      margin: 30px 0;
+      border-radius: 70px;
+    }
+
+    .style2 {
+      border-radius: 10px;
+      background-color: white;
+      padding: 10px;
+      width : 50%;
+      height: 5%;
+      overflow: hidden;
+      margin: 200px 370px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      color:red
+    }
+
+    .style2 {
+    margin: 50px 400px;
+    }
