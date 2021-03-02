@@ -35,7 +35,7 @@ function myExplode ( $delimiter, $string )
 }
 
 $delimiter = ':';
-$string    = 'Ali:Rzayev:2000:ADPU';
+$string    = 'Rahim:Suleymanov:1994:ADPU';
 
 print_r( myExplode( $delimiter, $string ) );
 

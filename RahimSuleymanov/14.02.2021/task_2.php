@@ -34,7 +34,7 @@ function talkTime ( $clock = NULL )
 	return $clock[ 0 ] . ' : ' . $clock[ 1 ] . ' ' . $medium;
 }
 
-$saat1 = '00:00';
+$saat1 = '01:16';
 $saat2 = '03:30';
 $saat3 = '23:05';
 

@@ -77,5 +77,5 @@ function myRsort ( $text = NULL )
 	return $output;
 }
 
-$text = 'Proqramlasdirma';
+$text = 'Programming';
 print_r( myRsort( $text ) );

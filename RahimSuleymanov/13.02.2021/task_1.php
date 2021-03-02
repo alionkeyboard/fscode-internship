@@ -36,7 +36,7 @@ function wordCounter ( $text = NULL )
 	return $wordCounter;
 }
 
-$text = 'Bu cumlede tam-tamina alti soz var.';
+$text = 'Bu cumlede tami-tamina alti soz var';
 echo wordCounter( $text );
 
 
